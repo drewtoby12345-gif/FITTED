@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FITTED Premium</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+<nav>
+  <div class="logo" onclick="goHome()">FITTED</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="premium.html">Premium</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<div class="card">
+  <h2>AI Stylist</h2>
+  <p>Premium members get weather based outfit automation and trend tracking.</p>
+</div>
+
+<div class="card">
+  <h2>Subscribe</h2>
+  <button id="checkout-button">Subscribe $9.99/month</button>
+</div>
+
+</div>
+
+<div class="footer">FITTED Premium © 2026</div>
+
+<script>
+
+function goHome(){
+  window.location.href="index.html";
+}
+
+// STRIPE FRONTEND PLACEHOLDER
+const stripe = Stripe("YOUR_PUBLISHABLE_KEY");
+
+document.getElementById("checkout-button").addEventListener("click",function(){
+  alert("Connect this to your Stripe Checkout Session in backend.");
+});
+
+</script>
+
+</body>
+</html>
