@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;500;700&display=swap');
+
+:root{
+  --bg:#0f0f14;
+  --card:#181820;
+  --accent:#6c5ce7;
+  --text:#ffffff;
+  --muted:#999;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Inter, sans-serif;
+  background:linear-gradient(135deg,#0f0f14,#1c1c2b);
+  color:var(--text);
+  min-height:100vh;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,0.4);
+}
+
+.logo{
+  font-family:Orbitron;
+  font-size:20px;
+  cursor:pointer;
+}
+
+nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.container{
+  padding:60px 40px;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:30px;
+  border-radius:20px;
+  backdrop-filter:blur(20px);
+  margin-bottom:30px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:var(--accent);
+}
+
+button{
+  background:var(--accent);
+  border:none;
+  padding:12px 22px;
+  border-radius:8px;
+  color:white;
+  cursor:pointer;
+  font-weight:600;
+}
+
+input[type=range]{
+  width:100%;
+}
+
+.footer{
+  text-align:center;
+  padding:30px;
+  color:var(--muted);
+}
