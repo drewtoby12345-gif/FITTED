@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FITTED</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+<nav>
+  <div class="logo" onclick="goHome()">FITTED</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="premium.html">Premium</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<div class="card">
+  <h2>Style Intensity</h2>
+  <input type="range" min="1" max="10" value="5" id="slider">
+  <p id="sliderValue">Level: 5</p>
+</div>
+
+<div class="card">
+  <h2>Upload Outfit</h2>
+  <input type="file" id="upload" multiple>
+  <div id="preview"></div>
+</div>
+
+<div class="card">
+  <h2>Upgrade to Premium</h2>
+  <button onclick="goPremium()">Unlock AI Stylist</button>
+</div>
+
+</div>
+
+<div class="footer">FITTED © 2026</div>
+
+<script>
+
+function goHome(){
+  window.location.href="index.html";
+}
+
+function goPremium(){
+  window.location.href="premium.html";
+}
+
+document.getElementById("slider").oninput=function(){
+  document.getElementById("sliderValue").innerText="Level: "+this.value;
+};
+
+document.getElementById("upload").addEventListener("change",function(e){
+  const preview=document.getElementById("preview");
+  preview.innerHTML="";
+  for(let file of e.target.files){
+    const reader=new FileReader();
+    reader.onload=function(ev){
+      const img=document.createElement("img");
+      img.src=ev.target.result;
+      img.style.width="100px";
+      img.style.margin="10px";
+      img.style.borderRadius="10px";
+      preview.appendChild(img);
+    }
+    reader.readAsDataURL(file);
+  }
+});
+
+</script>
+
+</body>
+</html>
